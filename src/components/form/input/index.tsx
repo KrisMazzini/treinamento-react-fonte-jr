@@ -1,15 +1,21 @@
-import { User } from 'phosphor-react'
+import { InputHTMLAttributes } from 'react'
+import { IconProps } from 'phosphor-react'
 
 import { Container, InputContainer } from './styles'
 
-export function Input() {
+type InputProps = {
+    label: string
+    icon: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<SVGSVGElement>>
+} & InputHTMLAttributes<HTMLInputElement>
+
+export function Input({ label, icon: Icon, ...rest }: InputProps) {    
     return (
         <Container>
-            Nome de usuário
+            {label}
 
             <InputContainer>
-                <input placeholder='Digite seu nome de usuário' />
-                <User size={24} />
+                <input {...rest} />
+                <Icon size={24} />
             </InputContainer>
         </Container>
     )

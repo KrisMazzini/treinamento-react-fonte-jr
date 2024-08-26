@@ -1,4 +1,14 @@
-import { styled } from "@/styles";
+import { styled, keyframes } from "@/styles";
+
+const spin = keyframes({
+    from: {
+        transform: "rotate(0deg)"
+    },
+
+    to: {
+        transform: "rotate(360deg)"
+    }
+})
 
 export const Container = styled("button", {
     border: "none",
@@ -18,12 +28,16 @@ export const Container = styled("button", {
     backgroundImage: "$primary-gradient",
     cursor: "pointer",
 
-    '&:not(:disabled):active': {
+    '&:not(:disabled):hover': {
         filter: "brightness(1.2)"
     },
 
     '&:disabled': {
         background: "$zinc-400",
         cursor: "not-allowed",
+    },
+
+    svg: {
+        animation: `${spin} 600ms linear infinite`
     }
 })

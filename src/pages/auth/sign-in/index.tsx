@@ -1,3 +1,5 @@
+import { LockKey, User } from 'phosphor-react'
+
 import { Container, Content, Form, Header, Image } from './styles'
 
 import { Input } from '@/components/form/input'
@@ -15,18 +17,20 @@ export function SignIn() {
                 </Header>
 
                 <Form>
-                    <Input />
-                    <Input />
-                    {/* <label>
-                        Senha
+                    <Input
+                        label='Nome de usuário'
+                        placeholder='Digite seu nome de usuário'
+                        icon={User}
+                    />
 
-                        <div>
-                            <input type='password' placeholder='Digite sua senha' />
-                            <LockKey />
-                        </div>
-                    </label> */}
+                    <Input
+                        label='Senha'
+                        placeholder='Digite sua senha'
+                        type="password"
+                        icon={LockKey}
+                    />
 
-                    <Button type="submit" />
+                    <Button label="Entrar" type="submit" />
                 </Form>
 
                 <footer>
