@@ -7,7 +7,23 @@ export const Container = styled("div", {
 
     color: "$zinc-400",
 
-    span: {
-        fontSize: "$sm",
+    variants: {
+        size: {
+            sm: {
+                span: {
+                    fontSize: "$sm",
+                },
+            },
+
+            md: {
+                span: {
+                    fontSize: "$md",
+                },
+            }
+        },
+    },
+
+    defaultVariants: {
+        size: "sm",
     }
 })

@@ -1,9 +1,6 @@
 import { styled } from "@/styles"
 
 export const Container = styled("div", {
-    width: "$10",
-    height: "$10",
-
     borderRadius: "$full",
     position: "relative",
     display: "inline-block",
@@ -13,11 +10,27 @@ export const Container = styled("div", {
     svg: {
         transform: "rotate(-90deg)"
     },
+
+    variants: {
+        size: {
+            sm: {
+                width: "$10",
+                height: "$10",
+            },
+
+            md: {
+                width: "$16",
+                height: "$16",
+            }
+        }
+    },
+
+    defaultVariants: {
+        size: "sm"
+    }
 })
 
 export const Content = styled("span", {
-    width: "$8",
-    height: "$8",
     borderRadius: "$full",
 
     position: "absolute",
@@ -30,10 +43,35 @@ export const Content = styled("span", {
 
     background: "$zinc-950",
 
-    span: {
-        fontSize: 6,
-        position: "absolute",
-        right: 2,
-        top: 6,
-    }
+    variants: {
+        size: {
+            sm: {
+                width: "$8",
+                height: "$8",
+
+                fontSize: "$md",
+
+                span: {
+                    fontSize: 6,
+                    position: "absolute",
+                    right: 2,
+                    top: 6,
+                },
+            },
+
+            md: {
+                width: "$14",
+                height: "$14",
+
+                fontSize: "$3xl",
+
+                span: {
+                    fontSize: 12,
+                    position: "absolute",
+                    right: 3,
+                    top: 10,
+                },
+            }
+        }
+    },
 })

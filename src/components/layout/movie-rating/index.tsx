@@ -1,12 +1,14 @@
+import { ComponentProps } from "react";
+
 import { theme } from "@/styles";
 import { Container, Content } from "./styles";
 
 type MovieRatingProps = {
     progress: number
-}
+} & ComponentProps<typeof Container>
 
-export function MovieRating({ progress }: MovieRatingProps) {
-    const RADIUS = 20
+export function MovieRating({ progress, size }: MovieRatingProps) {
+    const RADIUS = size === "md" ? 32 : 20
     const STROKE_WIDTH = 4
 
     const progressColor = getProgressColor()
@@ -30,7 +32,7 @@ export function MovieRating({ progress }: MovieRatingProps) {
     }
 
     return (
-        <Container>
+        <Container size={size}>
             <svg
                 width={RADIUS * 2}
                 height={RADIUS * 2}
@@ -47,7 +49,7 @@ export function MovieRating({ progress }: MovieRatingProps) {
                 />
             </svg>
 
-            <Content>
+            <Content size={size}>
                 {progress}
                 <span>%</span>
             </Content>
