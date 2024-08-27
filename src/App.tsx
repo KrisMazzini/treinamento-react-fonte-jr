@@ -1,7 +1,9 @@
-import { SignIn } from "./pages/auth/sign-in";
+import { RouterProvider } from "react-router-dom";
+
+import { router } from "./routes";
 
 export function App() {
   return (
-    <SignIn />
+      <RouterProvider router={router} />
   )
 }

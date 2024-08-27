@@ -1,16 +1,16 @@
-import { LockKey, User } from 'phosphor-react'
+import { Link } from 'react-router-dom'
+import { At, LockKey, User } from 'phosphor-react'
 
 import { Form, Header } from './styles'
 
 import { Input } from '@/components/form/input'
 import { Button } from '@/components/form/button'
-import { Link } from 'react-router-dom'
 
-export function SignIn() {
+export function SignUp() {
     return (
         <>
             <Header>
-                <h1>Acessar conta</h1>
+                <h1>Criar conta grátis</h1>
                 <span>Descubra novos filmes e compartilhe experiências com a comunidade</span>
             </Header>
 
@@ -22,19 +22,32 @@ export function SignIn() {
                 />
 
                 <Input
+                    label='E-mail'
+                    placeholder='Digite seu e-mail'
+                    icon={At}
+                />
+
+                <Input
                     label='Senha'
                     placeholder='Digite sua senha'
                     type="password"
                     icon={LockKey}
                 />
 
-                <Button label="Entrar" type="submit" />
+                <Input
+                    label='Confirmar Senha'
+                    placeholder='Digite sua senha novamente'
+                    type="password"
+                    icon={LockKey}
+                />
+
+                <Button label="Finalizar cadastro" type="submit" />
             </Form>
 
             <footer>
                 <span>
-                    Não possui uma conta?{' '}
-                    <Link to="/sign-up">Registre-se gratuitamente</Link>
+                    Já possui uma conta?{' '}
+                    <Link to="/sign-in">Entre agora</Link>
                 </span>
             </footer>
         </>
